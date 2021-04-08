@@ -40,6 +40,10 @@ function watch() {
     })
     gulp.watch('./scss/**/*.scss', style);
     gulp.watch('./*.html').on('change', browserSync.reload);
+    gulp.watch('./js/*.js').on('change', browserSync.reload);
+    // TIP обычно все исходники, за изменениями которых надо следить и чё-то делать (компилить, страничку обновлять),
+    // кладут в папочку src и пишут что-то типа
+    // gulp.watch('./src/*').on('change', browserSync.reload);
 }
 
 exports.style = style;

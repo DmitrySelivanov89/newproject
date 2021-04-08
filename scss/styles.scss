@@ -164,6 +164,9 @@ body {
   color: $color-primary-700;
   background: $color-secondary-50;
   border: 1px solid transparent;
+  // TIP Тут не совсем понятно, что должно произойти.
+  // Если хочется поменять ширину правой рамки, то это border-right-width.
+  // В текущем виде строчка не сработает.
   border-right: $base / 2;
 
   &--size-lg {
@@ -175,6 +178,7 @@ body {
 .btn {
   @include quicksand;
 
+  // TIP Опечатка. border-box
   box-sizing: border-boxs;
   display: inline-block;
   padding: $base * 3 $base * 4;

@@ -20,16 +20,17 @@ function style() {
         }));
 }
 
-// function lintCss() {
-//     return gulp('./scss/**/*.scss')
-//       .pipe(gulpStylelint({
-//         reporters: [
-//           {
-//             formatter: 'string',
-//             console: true}
-//         ]
-//       }));
-// }
+function lintCss() {
+    return gulp('./scss/**/*.scss')
+        .pipe(gulpStylelint({
+            reporters: [
+                {
+                    formatter: 'string',
+                    console: true
+                }
+            ]
+        }));
+}
 
 
 function watch() {
@@ -40,8 +41,9 @@ function watch() {
     })
     gulp.watch('./scss/**/*.scss', style);
     gulp.watch('./*.html').on('change', browserSync.reload);
+    gulp.watch('./js/*.js').on('change', browserSync.reload);
 }
 
 exports.style = style;
 exports.watch = watch;
-// exports.lintCss = lintCss;
+exports.lintCss = lintCss;
